@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 400px; /* Tamaño fijo del contenedor en píxeles */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    background-size: cover;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  form label,
+  form input,
+  form button {
+    display: block;
+    width: 100%;
+  }
+  
+  form button {
+    margin-top: 10px;
+  }
+  
+  h1 {
+    font-size: 24px; /* Tamaño fijo del encabezado en píxeles */
+  }
+  
+  input {
+    font-size: 16px; /* Tamaño fijo de fuente para los elementos de entrada en píxeles */
+  }
+  
+  /* Zoom fijo al 100% */
+  @media screen and (max-width: 100%) {
+    body {
+      zoom: reset; /* Establecemos el zoom en reset para mantener el tamaño fijo */
+    }
+  }
+
+/* Agregar estilos para la animación de carga */
+.loading-animation {
+  display: none;
+  margin-left: 10px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.login {
+  height: 50px;
+  width: 300px;
+}

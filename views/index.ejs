@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/index/css2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+ 
+  <title>Document</title>
+ 
+</head>
+<body>
+ 
+<div class="cont-mensajes fix" id="mensajes-cont">
+  <div class="mensajes" id="mensajes21"></div>
+</div>
+
+
+
+
+  <div class="login-con hidden2 display-fix" id="login">
+    <h4>Inicio de Sesión</h2>
+    <form class="flexform" method="post" action="/loginpost" >
+       <div class="marginform"><label for="username">Usuario:</label></div>
+            
+            <input type="text" id="name" name="name" required>
+        
+        <div class="marginform"><label for="password">Contraseña:</label></div>
+            
+            <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Iniciar Sesión</button>
+        
+    </form>
+  </div>
+
+
+  <div id="overlay"></div>
+  <div class='desplegar-off' id="desplegar-off">
+  <div id="desplegar">
+    <div class="desplegar-in">
+      <div class="desplegar-in1">
+        <button id="boton-desplegar" class="boton-desplegar">x</button>
+      </div>
+      <div class="desplegar-in2">
+         <div class="desplegar-in2-main">
+          <div class="form-container">
+            <h2>Contacto</h2>
+            <form>
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+              </div>
+              <div class="form-group">
+                <label for="celular">Número de celular:</label>
+                <input type="tel" id="celular" name="celular" required>
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+         </div>
+         <div class="desplegar-in2-main2">
+          <img src="/index/celu.png" class="desplegar-in2-main-img1">
+         </div>
+
+        </div>
+    </div>
+  </div>
+</div>
+  <div class="con-nabvar">
+    <nav class="navbar">
+      <a href="#" class="myButton2" id="logo">INICIAR SESION</a>
+      <img src="/index/charlando.png" class="perfil-mensajes display-fix" alt="" id="perfil-mensajes">
+      <img src="/index/2131.png" class="perfil display-fix" alt="" id="perfil">
+      <div id="datetime" class="datetime">Fecha y Hora</div>
+    </nav>
+  </div>
+
+  <div class="con-nav1">
+    <div class="nav1-1">
+      
+      <a href="#" class="myButton" id="boton4">Inicio</a>
+      <a href="#" class="myButton" id="boton2">Productos</a>
+      <a href="#" class="myButton" id="boton1">Logout</a>
+      <a href="#" class="myButton" id="boton3">Contacto</a>
+      
+
+    </div>
+  </div>
+
+  <div id="main-con" class="main-con visible">
+    <div class="main">
+      <pre id="texto"></pre>
+      
+    </div>
+  </div>
+  
+  <div class="main-con2 hidden" id="main-con2">
+    <div class="main2"  id="main-con2-1">
+
+      <div class="products">
+        <div class="grid-container">
+          <%- productosHTML %>  
+       
+      <div class="grid-item">
+        <div class="img-agregar"></div>
+        
+          
+        
+      </div>
+   
+        
+      
+      </div>
+      </div>
+  </div>
+ 
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var dato1 = '<%= perfil %>'
+
+const textoCompleto = "Your IP:  <%= ip %>\nUser Agent:  <%= userAgent %>\nHash:  <%= pass2 %>\nUser:  <%= nombreUsuario %>";
+  const textoElemento = document.getElementById('texto');
+  let indice = 0;
+  const intervalo = 10;
+
+  function mostrarLetraPorLetra() {
+    if (indice < textoCompleto.length) {
+      textoElemento.textContent += textoCompleto[indice];
+      indice++;
+      setTimeout(mostrarLetraPorLetra, intervalo);
+    }
+  }
+
+  mostrarLetraPorLetra();</script>
+
+
+
+
+<script src="/index/js.js"></script>
+<script src="/index/js2.js"></script>
+  
+</html>
