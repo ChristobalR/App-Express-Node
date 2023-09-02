@@ -7,8 +7,54 @@ const perfilmensajes = document.getElementById('perfil-mensajes')
 const mensajes21 = document.getElementById('mensajes21')
 const overlay = document.getElementById('overlay')
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+const loginContainer = document.getElementById('login-contenedor')
+const loginl = document.getElementById('login')
+
+var logintarget = false
+
+login.addEventListener('click', () => {
+ 
+ if(logintarget == false){
+   setTimeout(() => {
+    overlay.classList.add('overlay')
+    overlay.classList.add('active2')
+     loginContainer.classList.remove('display-fix')
+     loginContainer.classList.add('contenedor-login')
+   }, 20);
+
+   setTimeout(() => {
+     
+   
+   logintarget = true
+   }, 1);
+
+ }
+ 
+
+ 
+} )
+
+
+document.addEventListener('click', function(event) {
+ if(logintarget == true){
+  if (!loginl.contains(event.target)) {
+    loginContainer.classList.remove('contenedor-login')
+    loginContainer.classList.add('display-fix')
+    overlay.classList.remove('overlay')
+    overlay.classList.remove('active2')
+    logintarget = false
+   }
+       
+ }
+
+    
+    })
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var contadorperfilmensajes = false
 
@@ -67,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
-document.getElementById('boton1').addEventListener('click', function () {window.location.href = '/logout'; });
+
 //////////////////////////////// FUNCION PARA APARECER Y DESAPARECER EL MAIN /////////////////////////////////////////
 const toggleProductosButton = document.getElementById('boton2');
 const toggleInicioButton = document.getElementById('boton4');
@@ -197,47 +243,7 @@ document.getElementById('boton-desplegar').addEventListener('click', function() 
 
 ////////////////////////////////////////////////////////////////////////////////////////
  
- const logindiv = document.getElementById('login')
- var logintarget = false
- 
-login.addEventListener('click', () => {
-  
-  if(logintarget == false){
-    setTimeout(() => {
-      logindiv.classList.remove('display-fix')
-    }, 20);
 
-    setTimeout(() => {
-      logindiv.classList.remove('hidden2')
-    logindiv.classList.add('visible2')
-    
-    logintarget = true
-    }, 1);
-
-  }
-  
-
-  
-} )
-
-
-document.addEventListener('click', function(event) {
- if (logintarget == true) {
-  if (!logindiv.contains(event.target)) {
-    // Oculta el div al hacer clic fuera de él
-      console.log('target')
-      logindiv.classList.remove('visible2')
-      logindiv.classList.add('hidden2')
-      logintarget = false
-      setTimeout(() => {
-        logindiv.classList.add('display-fix')
-      }, 600);
-     
-
-     
-}
- }
-})
 
 
 

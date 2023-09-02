@@ -12,29 +12,35 @@
  
 </head>
 <body>
- 
+ <div id="login-contenedor" class=" display-fix">
+  <div class="login-con" id="login" >
+    
+    <form  class="cont-form" method="post" action="/loginpost" >
+      <h1>Login to system</h1>
+      <h5>Please enter your login information or <span>click here</span> to registration</h5>
+      
+            
+            <input type="text" id="name" name="name" placeholder="USERNAME" required>
+        
+        
+            
+            <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+        
+        <button type="submit">Iniciar Sesión</button>
+        
+    </form>
+    <div class="login-img"></div>
+  </div>
+
+ </div>
+  
+
 <div class="cont-mensajes fix" id="mensajes-cont">
   <div class="mensajes" id="mensajes21"></div>
 </div>
 
 
 
-
-  <div class="login-con hidden2 display-fix" id="login">
-    <h4>Inicio de Sesión</h2>
-    <form class="flexform" method="post" action="/loginpost" >
-       <div class="marginform"><label for="username">Usuario:</label></div>
-            
-            <input type="text" id="name" name="name" required>
-        
-        <div class="marginform"><label for="password">Contraseña:</label></div>
-            
-            <input type="password" id="password" name="password" required>
-        
-        <button type="submit">Iniciar Sesión</button>
-        
-    </form>
-  </div>
 
 
   <div id="overlay"></div>
@@ -85,13 +91,16 @@
       <div id="datetime" class="datetime">Fecha y Hora</div>
     </nav>
   </div>
+  
+  
 
+  
   <div class="con-nav1">
     <div class="nav1-1">
       
       <a href="#" class="myButton" id="boton4">Inicio</a>
-      <a href="#" class="myButton" id="boton2">Productos</a>
-      <a href="#" class="myButton" id="boton1">Logout</a>
+      <a href="#" class="myButton" id="boton2">Grid View</a>
+      
       <a href="#" class="myButton" id="boton3">Contacto</a>
       
 
@@ -124,6 +133,7 @@
       </div>
       </div>
   </div>
+
  
 </body>
 
