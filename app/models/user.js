@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// Define el esquema del modelo de usuario
+
 const usuarioSchema = new mongoose.Schema({
   name: { type: String, required: true },
   passwordHash: { type: String, required: true },
   admin: {type: Boolean, required: true, default: false}
-  
-  // Otros campos del usuario si los tienes...
+
+
 });
 const messageSchema = new mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuarios', required: true },
@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
   stock: {type: Number, required: true}
 });
 
-// Antes de guardar un nuevo usuario, hashea la contraseña
+
 usuarioSchema.pre('save', async function (next) {
   if (!this.isModified('passwordHash')) {
     return next();
@@ -38,7 +38,7 @@ usuarioSchema.pre('save', async function (next) {
   }
 });
 
-// Crea el modelo de usuario a partir del esquema
+
 const Usuarios = mongoose.model('Usuarios', usuarioSchema);
 const Message = mongoose.model('BandejaMensajes', messageSchema);
 const Products = mongoose.model('Products', productSchema);

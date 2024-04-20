@@ -1,19 +1,17 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 const initDB = async () => {
   try {
-    // Conectar a la base de datos
-    
-    await mongoose.connect('mongodb+srv://cristobalgavilanr:xKXN3PoUcCOhX8VF@cluster0.mlkcwqi.mongodb.net/bd?retryWrites=true&w=majority', {useNewUrlParser: true,useUnifiedTopology: true,});
-    console.log('Conexión exitosa a la base de datos');
-   
-   
+    const dbConnectionUrl = process.env.MONGODB_URI;
+    await mongoose.connect(dbConnectionUrl, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-  
-   
+    console.log("Conexión exitosa a la base de datos");
   } catch (err) {
-    console.error('Error en la conexión a la base de datos:', err);
+    console.error("Error en la conexión a la base de datos:", err);
   }
 };
 
